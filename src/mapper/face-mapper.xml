@@ -34,5 +34,9 @@
 		</if>
 		</where>
 	</select>
+	
+	<select id="queryOne" resultMap="Face1" parameterType="java.lang.Integer">
+		select * from face a,user b where a.userID=b.userID and a.userID=#{id}
+	</select>
 
 </mapper>

@@ -15,4 +15,8 @@ public class FaceService {
 	public List<Face> query(Face face) {
 		return this.dao.query(face);
 	}
+	
+	public List<Face> queryOne(Integer id){
+		return this.dao.queryOne(id);
+	}
 }

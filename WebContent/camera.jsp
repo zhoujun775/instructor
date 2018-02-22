@@ -23,8 +23,8 @@
       <video id="video" width="400" height="300"></video>
       <canvas id="canvas"></canvas>
     </div>
-    <button id="live">直播</button>
-    <button id="snap">截图</button>
+    <button id="live">打开摄像头</button>
+    <button id="snap">开始人脸识别</button>
     <script>  
    	  var imageDataB64="";
       var video = document.getElementById('video');
@@ -62,12 +62,18 @@
 
        function testFace(){
     	  $.ajax({
-    		  data:{"img":imageDataB64},
+    		  data:{"img":imageDataB64,"id":1},
     		  type:"POST",
     		  url:"/ins/face/faceRec",
     		  dataType:"json",
     		  success:function(data){
-    			  alert(data);
+    			  if(data.similarity>80){
+    				  alert("识别成功！您的相似度为："+data.similarity);
+    			  }
+    			  else{
+    				  alert("识别失败！您的相似度为："+data.similarity);
+    			  }
+    			  console.log(data);
     		  }
     	  });
       } 
