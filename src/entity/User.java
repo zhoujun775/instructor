@@ -3,17 +3,16 @@ package entity;
 public class User {
 	
 	
-	private int userID;
+	private Integer userID;
 	private String userName;
 	private String password;
-	private int identity;
+	private Integer identity;
 	private String mail;
 	private String academy;
-	
-	public int getUserID() {
+	public Integer getUserID() {
 		return userID;
 	}
-	public void setUserID(int userID) {
+	public void setUserID(Integer userID) {
 		this.userID = userID;
 	}
 	public String getUserName() {
@@ -28,10 +27,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getIdentity() {
+	public Integer getIdentity() {
 		return identity;
 	}
-	public void setIdentity(int identity) {
+	public void setIdentity(Integer identity) {
 		this.identity = identity;
 	}
 	public String getMail() {
@@ -46,16 +45,28 @@ public class User {
 	public void setAcademy(String academy) {
 		this.academy = academy;
 	}
-	
+	public User(Integer userID, String userName, String password, Integer identity, String mail, String academy) {
+		super();
+		this.userID = userID;
+		this.userName = userName;
+		this.password = password;
+		this.identity = identity;
+		this.mail = mail;
+		this.academy = academy;
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((academy == null) ? 0 : academy.hashCode());
-		result = prime * result + identity;
+		result = prime * result + ((identity == null) ? 0 : identity.hashCode());
 		result = prime * result + ((mail == null) ? 0 : mail.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + userID;
+		result = prime * result + ((userID == null) ? 0 : userID.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
@@ -73,7 +84,10 @@ public class User {
 				return false;
 		} else if (!academy.equals(other.academy))
 			return false;
-		if (identity != other.identity)
+		if (identity == null) {
+			if (other.identity != null)
+				return false;
+		} else if (!identity.equals(other.identity))
 			return false;
 		if (mail == null) {
 			if (other.mail != null)
@@ -85,7 +99,10 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (userID != other.userID)
+		if (userID == null) {
+			if (other.userID != null)
+				return false;
+		} else if (!userID.equals(other.userID))
 			return false;
 		if (userName == null) {
 			if (other.userName != null)
@@ -99,18 +116,6 @@ public class User {
 		return "User [userID=" + userID + ", userName=" + userName + ", password=" + password + ", identity=" + identity
 				+ ", mail=" + mail + ", academy=" + academy + "]";
 	}
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public User(int userID, String userName, String password, int identity, String mail, String academy) {
-		super();
-		this.userID = userID;
-		this.userName = userName;
-		this.password = password;
-		this.identity = identity;
-		this.mail = mail;
-		this.academy = academy;
-	}
+	
 	
 }

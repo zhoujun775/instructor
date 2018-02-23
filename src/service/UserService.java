@@ -17,4 +17,8 @@ public class UserService {
 	public List<User> query(User user) {
 		return this.dao.query(user);
 	}
+	
+	public User queryByName(String name) {
+		return this.dao.queryByName(name);
+	}
 }

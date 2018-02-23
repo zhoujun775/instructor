@@ -11,5 +11,10 @@
 		select * from user where
 		userName like '%${userName}%'
 	</select>
-
+	
+	<select id="queryByName" parameterType="java.lang.String"
+		resultType="entity.User">
+		select * from user where userName=#{name}
+	</select>
+	
 </mapper>

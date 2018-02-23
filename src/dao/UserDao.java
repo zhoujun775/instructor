@@ -10,5 +10,7 @@ import entity.User;
 public interface UserDao{
 		
 	List<User> query(User user);
+	
+	User queryByName(String name);
 }
 

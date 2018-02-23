@@ -49,7 +49,7 @@ public class FaceController {
 	public String faceRec(String img,Integer id) throws Exception{
 		System.out.println("img:"+img);
 		System.out.println("id:"+id);
-		String path = FaceController.class.getClassLoader().getResource("../../resources/images/test.png").getPath();
+		String path = FaceController.class.getClassLoader().getResource("../../resources/faces/test.png").getPath();
 		System.out.println(path);
 		
 		BASE64Decoder decoder = new BASE64Decoder();    
@@ -65,7 +65,7 @@ public class FaceController {
 			
 			JSONObject re;
 			StringBuffer path2 = new StringBuffer();
-			path2.append(FaceController.class.getClassLoader().getResource("../../resources/images").getPath());
+			path2.append(FaceController.class.getClassLoader().getResource("../../resources/faces").getPath());
 			
 			System.out.println("path2:"+path2);
 			//respose= faceYoutu.FaceCompareUrl("http://open.youtu.qq.com/content/img/slide-1.jpg","http://open.youtu.qq.com/content/img/slide-1.jpg");

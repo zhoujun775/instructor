@@ -1,14 +1,14 @@
 package entity;
 
 public class Face {
-	private int faceID;
+	private Integer faceID;
 	private String faceName;
 	private String url;
 	private User user;
-	public int getFaceID() {
+	public Integer getFaceID() {
 		return faceID;
 	}
-	public void setFaceID(int faceID) {
+	public void setFaceID(Integer faceID) {
 		this.faceID = faceID;
 	}
 	public String getFaceName() {
@@ -29,7 +29,7 @@ public class Face {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Face(int faceID, String faceName, String url, User user) {
+	public Face(Integer faceID, String faceName, String url, User user) {
 		super();
 		this.faceID = faceID;
 		this.faceName = faceName;
@@ -44,7 +44,7 @@ public class Face {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + faceID;
+		result = prime * result + ((faceID == null) ? 0 : faceID.hashCode());
 		result = prime * result + ((faceName == null) ? 0 : faceName.hashCode());
 		result = prime * result + ((url == null) ? 0 : url.hashCode());
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
@@ -59,7 +59,10 @@ public class Face {
 		if (getClass() != obj.getClass())
 			return false;
 		Face other = (Face) obj;
-		if (faceID != other.faceID)
+		if (faceID == null) {
+			if (other.faceID != null)
+				return false;
+		} else if (!faceID.equals(other.faceID))
 			return false;
 		if (faceName == null) {
 			if (other.faceName != null)
@@ -82,6 +85,7 @@ public class Face {
 	public String toString() {
 		return "Face [faceID=" + faceID + ", faceName=" + faceName + ", url=" + url + ", user=" + user + "]";
 	}
+	
 	
 	
 }
