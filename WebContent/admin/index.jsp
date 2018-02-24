@@ -18,6 +18,7 @@
 <div id="bg">
 <div id="logo"><a href="#">3D虚拟辅导员</a>
 		<h2><a href="#">3D Virtual instructor</a></h2>
+		
 		<label class='user'>欢迎您，管理员&nbsp;<strong>${sessionScope.user.userName}</strong>！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 </div>
 <div id="main">
@@ -30,10 +31,9 @@
 				    <li class="first"><a href="index2.jsp">主&nbsp;&nbsp;页</a></li>
 					<li><a href="notice2.jsp">通知公告</a></li>
 				    <li><a href="http://localhost:8080/xuni/MyAjaxTest.jsp">事务咨询</a></li>
-				    <li><a href="">人脸识别</a></li>
+				    <li><a href="camera.jsp">人脸识别</a></li>
 				    <li><a href="#" onclick = "help()">使用帮助</a></li>
-				    	  
-					<li><a href="#">后台管理</a></li>
+					<li><a href="manage.jsp">后台管理</a></li>
 				</ul>
 			</div>
 			<!-- End Navigation -->

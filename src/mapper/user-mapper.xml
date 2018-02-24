@@ -12,9 +12,31 @@
 		userName like '%${userName}%'
 	</select>
 	
+	<select id="queryAllUser" resultType="entity.User">
+		select * from user 
+	</select>
+	
+	<select id="query2" resultType="entity.User">
+		select * from user 
+		<where>
+		<if test="userName!=null and userName !=''">
+		and userName like '%${userName}%'
+		</if>
+		<if test="identity!=null and identity!=-1">
+		and identity = #{identity}
+		</if>
+		</where>
+	</select>
+	
 	<select id="queryByName" parameterType="java.lang.String"
 		resultType="entity.User">
 		select * from user where userName=#{name}
 	</select>
+	
+	<insert id="insert" parameterType="entity.User">
+		insert into
+		user(userName,password,identity,mail,academy)
+		values(#{userName},#{password},#{identity},#{mail},#{academy})
+	</insert>
 	
 </mapper>

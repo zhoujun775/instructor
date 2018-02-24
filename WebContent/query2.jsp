@@ -9,8 +9,8 @@
 </head>
 <body>
 	<form action="/ins/face/query" method="get">
-		用户名<input type="text" name="userName">
-		照片名<input type="text" name="face.faceName">
+		用户名<input type="text" name="user.userName">
+		照片名<input type="text" name="faceName">
 		 <input type="submit" value="查询">
 	</form>
 

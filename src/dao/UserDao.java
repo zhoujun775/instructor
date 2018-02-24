@@ -11,6 +11,12 @@ public interface UserDao{
 		
 	List<User> query(User user);
 	
+	List<User> query2(User user);
+	
+	List<User> queryAllUser();
+	
 	User queryByName(String name);
+	
+	int insert(User user);//插入一个实体
 }
 

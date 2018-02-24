@@ -14,8 +14,14 @@
 	<association property="user" javaType="entity.User">
 		<id property="userID" column="userID"/>
 		<result property="userName" column="userName"/>
+		<result property="identity" column="identity"/>
 	</association>
 	</resultMap>
+	
+	<insert id="insert" parameterType="entity.Face">
+	insert into face(faceName,url,userID)
+	values(#{faceName},#{url},#{user.userID})
+	</insert>
 	
 	<select id="query" resultMap="Face1" parameterType="entity.Face">
 		select * from face a, user b
@@ -26,7 +32,7 @@
 		<if test="user!=null">
 			
 			<if test="user.userName!=null and user.userName!=''">
-				and b.userName like '%${userName}%'
+				and b.userName like '%${user.userName}%'
 			</if>
 		</if>
 		<if test="faceName!=null and faceName!=''">

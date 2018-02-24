@@ -19,4 +19,8 @@ public class FaceService {
 	public List<Face> queryOne(Integer id){
 		return this.dao.queryOne(id);
 	}
+	
+	public int insert(Face face) {
+		return this.dao.insert(face);
+	}
 }
