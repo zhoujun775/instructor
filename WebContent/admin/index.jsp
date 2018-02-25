@@ -31,7 +31,7 @@
 				    <li class="first"><a href="index2.jsp">主&nbsp;&nbsp;页</a></li>
 					<li><a href="notice2.jsp">通知公告</a></li>
 				    <li><a href="http://localhost:8080/xuni/MyAjaxTest.jsp">事务咨询</a></li>
-				    <li><a href="camera.jsp">人脸识别</a></li>
+				    <li><a href="recognize.jsp">人脸识别</a></li>
 				    <li><a href="#" onclick = "help()">使用帮助</a></li>
 					<li><a href="manage.jsp">后台管理</a></li>
 				</ul>
