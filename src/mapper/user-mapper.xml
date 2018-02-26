@@ -39,4 +39,13 @@
 		values(#{userName},#{password},#{identity},#{mail},#{academy})
 	</insert>
 	
+	<update id="update" parameterType="entity.User">
+		update user set
+		userName=#{userName},password=#{password},academy=#{academy},mail=#{mail}
+		where userID=#{userID}
+	</update>
+	
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from user where userID=#{userID}
+	</delete>
 </mapper>

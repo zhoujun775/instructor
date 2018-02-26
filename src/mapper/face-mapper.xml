@@ -44,5 +44,9 @@
 	<select id="queryOne" resultMap="Face1" parameterType="java.lang.Integer">
 		select * from face a,user b where a.userID=b.userID and a.userID=#{id}
 	</select>
+	
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from face where faceID=#{faceID}
+	</delete>
 
 </mapper>

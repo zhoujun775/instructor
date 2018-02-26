@@ -49,14 +49,13 @@
 
 			<h3>通知管理</h3>
 			<ul>
-				<li><a href="" target="right">发布通知</a></li>
-				<li><a href="" target="right">通知查询与修改</a></li>
+				<li><a href="insertNotice.jsp" target="right">发布通知</a></li>
+				<li><a href="queryNotice.jsp" target="right">通知查询与修改</a></li>
 
 			</ul>
 			<h3>语料库管理</h3>
 			<ul>
-				<li><a href="" target="right">语句增加</a></li>
-				<li><a href="" target="right">语句查询与修改</a></li>
+				
 
 			</ul>
 			<h3>人脸识别数据库管理</h3>

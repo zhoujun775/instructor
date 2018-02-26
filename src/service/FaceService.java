@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import dao.FaceDao;
 import entity.Face;
+import entity.Notice;
 
 @Service
 public class FaceService {
@@ -22,5 +23,9 @@ public class FaceService {
 	
 	public int insert(Face face) {
 		return this.dao.insert(face);
+	}
+	
+	public int delete(Integer faceID) {
+		return this.dao.delete(faceID);
 	}
 }

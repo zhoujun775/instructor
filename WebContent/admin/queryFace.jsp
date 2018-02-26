@@ -103,8 +103,8 @@
 										<div class="modal-body">
 											<form role="form" action="/ins/face/delete" method="get">
 												<div class="form-group">
-													<input type="hidden" class="form-control" name="userName"
-														value="${p1.faceID}"> <label>确定要删除此条记录吗？</label>
+													<input type="hidden" class="form-control" name="faceID"
+														value="${p.faceID}"> <label>确定要删除此条记录吗？</label>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default"

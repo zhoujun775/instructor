@@ -35,4 +35,15 @@ public class UserService {
 	public int insert(User user) {
 		return this.dao.insert(user);
 	}
+	
+	@Transactional
+	public int update(User user) {
+		return this.dao.update(user);
+	}
+	
+	@Transactional
+	public int delete(Integer userID) {
+		return this.dao.delete(userID);
+	}
+	
 }

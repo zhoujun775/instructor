@@ -88,8 +88,19 @@ public class UserController {
 	public String insert(User user) {
 		int tag = this.service.insert(user);
 		System.out.println("tag:"+tag);
-		return "/admin/addUser.jsp";
+		return "/admin/insertUser.jsp";
 	}
 	
+	@RequestMapping("/update")
+	public String update(User user) {
+		int tag = this.service.update(user);
+		return "/admin/queryUser.jsp";
+	}
+	
+	@RequestMapping("/delete")
+	public String delete(Integer userID) {
+		int tag = this.service.delete(userID);
+		return "/admin/queryUser.jsp";
+	}
 	
 }

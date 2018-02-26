@@ -51,6 +51,13 @@ public class FaceController {
 		return faces;
 	}
 	
+	@RequestMapping("/delete")
+	public String delete(Integer faceID) {
+		int tag = this.service.delete(faceID);
+		if(tag!=0)
+			System.out.println("删除图像成功！");
+		return "/admin/queryFace.jsp";
+	}
 	
 	
 	public String getRandomString(int length) { //length表示生成字符串的长度  
@@ -103,13 +110,17 @@ public class FaceController {
 			JSONObject re;
 			StringBuffer path2 = new StringBuffer();
 			path2.append(FaceController.class.getClassLoader().getResource("../../resources/faces").getPath());
-			
-			System.out.println("path2:"+path2);
 			//respose= faceYoutu.FaceCompareUrl("http://open.youtu.qq.com/content/img/slide-1.jpg","http://open.youtu.qq.com/content/img/slide-1.jpg");
 			//respose = faceYoutu.DetectFace("test.jpg",1);
 			List<Face> faces = this.service.queryOne(id);
 			double max=0.0;
 			String result=null;
+			
+			if(faces.size()==0) {
+				String str = "{\"similarity\":\"-1\"}";    
+				System.out.println("noface");
+				return str;
+			}
 			
 			for(Face f : faces) {
 				System.out.println(f.toString());

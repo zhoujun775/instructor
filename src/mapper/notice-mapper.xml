@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespcae原来指命名空间 -->
+<!-- 现在namespace指要映射给哪个接口 -->
+<mapper namespace="dao.NoticeDao">
+
+
+	<resultMap type="entity.Notice" id="Notice1">
+		<id property="noticeID" column="noticeID" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="time" column="time" />
+		<association property="user" javaType="entity.User">
+			<id property="userID" column="userID" />
+			<result property="userName" column="userName" />
+			<result property="identity" column="identity" />
+		</association>
+	</resultMap>
+
+	<insert id="insert" parameterType="entity.Notice">
+		insert into notice(title,content,time,userID)
+		values(#{title},#{content},#{time},#{user.userID})
+	</insert>
+	
+	<select id="queryAll" resultMap="Notice1">
+	select * from notice a, user b where a.userID=b.userID
+	</select>
+
+	<select id="query" resultMap="Notice1" parameterType="entity.Notice">
+		select * from notice a, user b
+		<where>
+			<if test="1==1">
+				and a.userID=b.userID
+			</if>
+
+			<if test="user!=null">
+				<if test="user.userName!=null and user.userName!=''">
+					and b.userName like '%${user.userName}%'
+				</if>
+			</if>
+			
+			<if test="title!=null and title!=''">
+			and a.title like '%${title}%'
+			</if>
+			
+			<if test="content!=null and content!=''">
+			and a.content like '%${content}%'
+			</if>
+		</where>
+	</select>
+	
+	<update id="update" parameterType="entity.Notice">
+		update notice set
+		title=#{title},content=#{content},time=#{time},userID=#{user.userID}
+		where noticeID=#{noticeID}
+	</update>
+
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from notice where noticeID=#{noticeID}
+	</delete>
+
+</mapper>

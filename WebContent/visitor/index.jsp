@@ -19,7 +19,7 @@
 <div id="logo"><a href="#">3D虚拟辅导员</a>
 		<h2><a href="#">3D Virtual instructor</a></h2>
 		
-		<label class='user'>欢迎您，管理员&nbsp;<strong>${sessionScope.user.userName}</strong>！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		<label class='user'>欢迎您，同学&nbsp;<strong>${sessionScope.user.userName}</strong>！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 </div>
 <div id="main">
 <!-- header begins -->
@@ -33,7 +33,6 @@
 				    <li><a href="">事务咨询</a></li>
 				    <li><a href="recognize.jsp">人脸识别</a></li>
 				    <li><a href="#" onclick = "help()">使用帮助</a></li>
-					<li><a href="manage.jsp">后台管理</a></li>
 				</ul>
 			</div>
 			<!-- End Navigation -->

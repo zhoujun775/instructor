@@ -7,6 +7,7 @@
 	<!-- mappers指要加载的映射文件 -->
 	<mappers>
 		<mapper resource="mapper/face-mapper.xml" />
+		<mapper resource="mapper/notice-mapper.xml" />
 		<mapper resource="mapper/user-mapper.xml" />
 	</mappers>
 </configuration>
